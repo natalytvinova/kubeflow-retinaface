@@ -14,7 +14,7 @@ def parse_args():
     parser.add_argument('--video-path', default=None)
     parser.add_argument('--loading-from', default='webcam')
     parser.add_argument('--loader', default='opencv')
-    parser.add_argument('--weights-path', default='./weights/mobilenet0.25_Final.pth')
+    parser.add_argument('--weights-path', default='../weights/mobilenet0.25_Final.pth')
     parser.add_argument('--target-size', default='480,640', help='target size in height,width format')
     parser.add_argument('--device', default='cpu', help='number of GPU for inference or "cpu"')
     parser.add_argument('--conf-th', default=0.5, type=float)
@@ -23,7 +23,7 @@ def parse_args():
 
 
 if __name__ == '__main__':
-    test_image = cv2.resize(cv2.imread('images/fossa.jpeg'), (150, 150))
+    test_image = cv2.resize(cv2.imread('../images/fossa.jpeg'), (150, 150))
     cudnn.benchmark = True
     args = parse_args()
     device = torch.device(args.device) if args.device == 'cpu' else torch.device(f'cuda:{args.device}')
@@ -83,7 +83,7 @@ if __name__ == '__main__':
                 # frame_orig = cv2.circle(frame_orig, (x, y), radius=3, color=(0, 0, 255), thickness=-1)
                 # frame_orig = cv2.putText(frame_orig, f'{idx}', (x, y), 1, 1.5, (0, 0, 255))
 
-        cv2.imwrite('saved/frame_orig.png', frame_orig)
+        cv2.imwrite('../saved/frame_orig.png', frame_orig)
         #cv2.imshow('frame_with_dets', frame_orig)
         #if cv2.waitKey(1) == 27:
         #    break
