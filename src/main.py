@@ -83,7 +83,7 @@ if __name__ == '__main__':
                 # frame_orig = cv2.circle(frame_orig, (x, y), radius=3, color=(0, 0, 255), thickness=-1)
                 # frame_orig = cv2.putText(frame_orig, f'{idx}', (x, y), 1, 1.5, (0, 0, 255))
 
-        cv2.imwrite('../saved/frame_orig.png', frame_orig)
-        #cv2.imshow('frame_with_dets', frame_orig)
-        #if cv2.waitKey(1) == 27:
-        #    break
+        #cv2.imwrite('../saved/frame_orig.png', frame_orig)
+        cv2.imshow('frame_with_dets', frame_orig)
+        if cv2.waitKey(1) == 27:
+            break
