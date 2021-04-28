@@ -31,5 +31,4 @@ COPY weights/ weights/
 COPY src/ src/
 COPY README.md .
 
-
-#CMD python src/main.py
+CMD ["/bin/sh" "-c" "python src/main.py"]
